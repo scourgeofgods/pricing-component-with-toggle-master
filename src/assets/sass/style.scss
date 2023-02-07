@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+$first: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+
+$second: hsl(240, 78%, 98%);
+$third: rgb(179, 181, 198);
+$forth: rgb(109, 112, 141);
+$fifth: hsl(232, 13%, 33%);
+$bg-gradient: $first;
+$primary: hsl(237, 63%, 64%);
+$secondary: $second;
+$font-family: 'Montserrat', sans-serif;
+$font-family-base: $font-family;
+$font-size-root: 62.5%;
+$font-size-base: 1rem;
+
+.sec {
+  padding: 5rem 0 10rem;
+  &-title {
+    margin: 5rem 0;
+  }
+  .sec-subtitle {
+    font-size: 15px;
+    font-weight: 400;
+    color: $third;
+  }
+}
+.cards {
+  position: relative;
+  margin-top: 2rem;
+  .card {
+    margin-top: 4rem;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 10px 3px #dddddd;
+    .card-list {
+      li {
+        padding: 2rem 0;
+        font-size: 18px;
+        color: $third;
+        border-top: 1px solid $third;
+        letter-spacing: 1px;
+      }
+    }
+    &:nth-child(2) {
+      background: $bg-gradient;
+      z-index: 3;
+      color: white;
+      padding: 20rem 0 0;
+    }
+    .card-btn {
+      background-color: $primary;
+      color: white;
+      padding: 1rem 0.5rem;
+      text-decoration: none;
+      font-size: 15px;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 1rem;
+    }
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 22px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.55s;
+  transition: 0.55s;
+}
+
+input:checked + .slider {
+  background: $bg-gradient;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
